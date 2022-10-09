@@ -19,6 +19,7 @@
 
 package com.sk89q.worldedit;
 
+import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.math.transform.AffineTransform;
 
 import javax.annotation.Nullable;
@@ -84,6 +85,17 @@ public class Vector implements Comparable<Vector> {
         this.x = other.x;
         this.y = other.y;
         this.z = other.z;
+    }
+
+    /**
+     * Copy another BlockVector3.
+     *
+     * @param other another BlockVector3 to make a copy of
+     */
+    public Vector(BlockVector3 other) {
+        this.x = other.getX();
+        this.y = other.getY();
+        this.z = other.getZ();
     }
 
     /**

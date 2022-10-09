@@ -104,8 +104,8 @@ public class RegionCommands {
         }
 
         CuboidRegion cuboidregion = (CuboidRegion) region;
-        Vector pos1 = cuboidregion.getPos1();
-        Vector pos2 = cuboidregion.getPos2();
+        Vector pos1 = cuboidregion.toVector(cuboidregion.getPos1());
+        Vector pos2 = cuboidregion.toVector(cuboidregion.getPos2());
         int blocksChanged = editSession.drawLine(Patterns.wrap(pattern), pos1, pos2, thickness, !shell);
 
         player.print(blocksChanged + " block(s) have been changed.");

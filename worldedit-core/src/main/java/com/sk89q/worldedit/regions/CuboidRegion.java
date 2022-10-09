@@ -20,6 +20,7 @@
 package com.sk89q.worldedit.regions;
 
 import com.sk89q.worldedit.*;
+import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.world.World;
 import com.sk89q.worldedit.world.storage.ChunkStore;
 
@@ -72,13 +73,21 @@ public class CuboidRegion extends AbstractRegion implements FlatRegion {
         recalculate();
     }
 
+    public BlockVector3 toBlockVector3(Vector pos) {
+        return new BlockVector3(pos);
+    }
+
+    public Vector toVector(BlockVector3 pos) {
+        return new Vector(pos);
+    }
+
     /**
      * Get the first cuboid-defining corner.
      *
      * @return a position
      */
-    public Vector getPos1() {
-        return pos1;
+    public BlockVector3 getPos1() {
+        return this.toBlockVector3(pos1);
     }
 
     /**
@@ -95,8 +104,8 @@ public class CuboidRegion extends AbstractRegion implements FlatRegion {
      *
      * @return a position
      */
-    public Vector getPos2() {
-        return pos2;
+    public BlockVector3 getPos2() {
+        return this.toBlockVector3(pos2);
     }
 
     /**
